@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#1976d2" />
+            <stop offset="100%" stop-color="#1565c0" />
+        </linearGradient>
+        <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.2" />
+        </filter>
+        <linearGradient id="selectedCatGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#bbdefb" />
+            <stop offset="100%" stop-color="#90caf9" />
+        </linearGradient>
+        <linearGradient id="videoControlGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#2196f3" />
+            <stop offset="100%" stop-color="#1976d2" />
+        </linearGradient>
+    </defs>
+    
+    <!-- 배경 패널 -->
+    <rect x="0" y="0" width="800" height="500" rx="10" fill="#f5f7fa" />
+    
+    <!-- 상단 헤더 -->
+    <rect x="0" y="0" width="800" height="60" rx="10 10 0 0" fill="url(#headerGradient)" />
+    
+    <!-- 헤더 내용 -->
+    <g>
+        <!-- 로고 아이콘 -->
+        <g transform="translate(20, 10) scale(0.4)">
+            <circle cx="50" cy="50" r="45" fill="#1e88e5" />
+            <path d="M50,20 C40,20 32,25 30,35 L30,40 L70,40 L70,35 C68,25 60,20 50,20 Z" fill="#ffffff" />
+            <path d="M30,40 L32,55 L68,55 L70,40 Z" fill="#ffffff" />
+            <polyline points="35,65 45,55 55,65 65,50" fill="none" stroke="#ffffff" stroke-width="3" />
+            <circle cx="35" cy="65" r="3" fill="#ffa000" />
+            <circle cx="45" cy="55" r="3" fill="#ffa000" />
+            <circle cx="55" cy="65" r="3" fill="#ffa000" />
+            <circle cx="65" cy="50" r="3" fill="#ffa000" />
+        </g>
+        
+        <text x="80" y="38" font-size="24" font-weight="bold" fill="#fff">안전교육 도우미</text>
+        <text x="780" y="38" text-anchor="end" font-size="16" fill="#fff">맞춤형 안전교육</text>
+    </g>
+    
+    <!-- 교육 콘텐츠 카탈로그 패널 -->
+    <rect x="20" y="80" width="240" height="400" rx="10" fill="#fff" stroke="#ddd" filter="url(#dropShadow)" />
+    <text x="40" y="110" font-size="18" font-weight="bold" fill="#333">교육 콘텐츠</text>
+    <line x1="40" y1="120" x2="220" y2="120" stroke="#eee" />
+    
+    <!-- 카테고리 검색 -->
+    <rect x="30" y="130" width="220" height="40" rx="20" fill="#f5f7fa" />
+    <text x="50" y="155" font-size="14" fill="#666">🔍 교육 콘텐츠 검색</text>
+    
+    <!-- 카테고리 목록 -->
+    <g>
+        <!-- 선택된 카테고리 -->
+        <rect x="30" y="180" width="220" height="45" rx="5" fill="url(#selectedCatGradient)" />
+        <rect x="30" y="180" width="5" height="45" rx="5 0 0 5" fill="#1565c0" />
+        <text x="50" y="205" font-size="14" font-weight="bold" fill="#1565c0">화재 예방 및 대응</text>
+        <text x="50" y="220" font-size="12" fill="#666">8개 교육 콘텐츠</text>
+        
+        <!-- 기타 카테고리들 -->
+        <rect x="30" y="235" width="220" height="45" rx="5" fill="#f5f7fa" />
+        <text x="50" y="260" font-size="14" fill="#333">기계 설비 안전</text>
+        <text x="50" y="275" font-size="12" fill="#666">12개 교육 콘텐츠</text>
+        
+        <rect x="30" y="290" width="220" height="45" rx="5" fill="#f5f7fa" />
+        <text x="50" y="315" font-size="14" fill="#333">전기 안전</text>
+        <text x="50" y="330" font-size="12" fill="#666">7개 교육 콘텐츠</text>
+        
+        <rect x="30" y="345" width="220" height="45" rx="5" fill="#f5f7fa" />
+        <text x="50" y="370" font-size="14" fill="#333">응급 처치</text>
+        <text x="50" y="385" font-size="12" fill="#666">5개 교육 콘텐츠</text>
+        
+        <rect x="30" y="400" width="220" height="45" rx="5" fill="#f5f7fa" />
+        <text x="50" y="425" font-size="14" fill="#333">보호구 착용 방법</text>
+        <text x="50" y="440" font-size="12" fill="#666">6개 교육 콘텐츠</text>
+    </g>
+    
+    <!-- 교육 콘텐츠 뷰어 패널 -->
+    <rect x="280" y="80" width="500" height="400" rx="10" fill="#fff" stroke="#ddd" filter="url(#dropShadow)" />
+    <text x="300" y="110" font-size="18" font-weight="bold" fill="#333">화재 예방 및 대응 교육</text>
+    <line x1="300" y1="120" x2="760" y2="120" stroke="#eee" />
+    
+    <!-- 비디오 플레이어 -->
+    <g>
+        <!-- 비디오 배경 -->
+        <rect x="300" y="130" width="460" height="260" fill="#000" />
+        
+        <!-- 비디오 콘텐츠 (화재 현장 이미지) -->
+        <g opacity="0.7">
+            <rect x="300" y="130" width="460" height="260" fill="#333" />
+            <path d="M370,300 L450,250 L520,350 L700,200" stroke="#ff8f00" stroke-width="50" opacity="0.3" />
+            <path d="M350,280 L430,240 L500,330 L650,190" stroke="#ff6d00" stroke-width="40" opacity="0.4" />
+            <path d="M330,260 L410,220 L480,310 L600,180" stroke="#ff3d00" stroke-width="30" opacity="0.5" />
+        </g>
+        
+        <!-- 소화기 이미지 (간략화) -->
+        <g transform="translate(400, 200)">
+            <rect x="0" y="0" width="30" height="60" rx="5" fill="#d32f2f" />
+            <rect x="10" y="-10" width="10" height="15" fill="#b71c1c" />
+            <rect x="5" y="10" width="20" height="40" fill="#f5f5f5" stroke="#b71c1c" stroke-width="1" />
+            <text x="15" y="35" text-anchor="middle" font-size="10" fill="#b71c1c">소화기</text>
+        </g>
+        
+        <!-- 재생 오버레이 -->
+        <circle cx="530" cy="260" r="35" fill="#fff" opacity="0.8" />
+        <polygon points="520,245 520,275 550,260" fill="#1e88e5" />
+        
+        <!-- 화면 내 텍스트 캡션 -->
+        <rect x="320" y="350" width="420" height="25" rx="5" fill="#000" opacity="0.7" />
+        <text x="490" y="368" text-anchor="middle" font-size="12" fill="#fff">소화기 사용법: 안전핀을 뽑고 화재의 근원을 향해 분사하세요</text>
+    </g>
+    
+    <!-- 비디오 컨트롤 -->
+    <rect x="300" y="400" width="460" height="40" fill="#f5f7fa" rx="5" />
+    <g>
+        <!-- 타임라인 -->
+        <rect x="340" y="415" width="280" height="10" rx="5" fill="#ddd" />
+        <rect x="340" y="415" width="120" height="10" rx="5" fill="url(#videoControlGradient)" />
+        <circle cx="460" cy="420" r="8" fill="#fff" stroke="#1e88e5" stroke-width="2" />
+        
+        <!-- 시간 표시 -->
+        <text x="680" y="425" text-anchor="middle" font-size="14" fill="#333">05:23 / 10:45</text>
+        
+        <!-- 컨트롤 버튼들 -->
+        <g fill="#1e88e5">
+            <!-- 이전 버튼 -->
+            <polygon points="310,415 310,425 320,420" />
+            
+            <!-- 일시정지 버튼 -->
+            <rect x="325" y="415" width="4" height="10" />
+            <rect x="331" y="415" width="4" height="10" />
+        </g>
+    </g>
+    
+    <!-- 교육 설명 -->
+    <g>
+        <text x="300" y="385" font-size="14" fill="#333">화재 발생 시 대피 요령 및 소화기 사용 방법에 대한 교육 영상입니다.</text>
+    </g>
+    
+    <!-- 관련 교육 콘텐츠 -->
+    <g transform="translate(660, 130)">
+        <!-- 반투명 오버레이 -->
+        <rect x="0" y="0" width="100" height="260" fill="#fff" opacity="0.9" />
+        <text x="50" y="20" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e88e5">관련 교육</text>
+        
+        <!-- 관련 콘텐츠 썸네일 -->
+        <rect x="10" y="30" width="80" height="45" rx="5" fill="#f5f7fa" />
+        <text x="50" y="58" text-anchor="middle" font-size="10" fill="#333">화재 유형별 대응</text>
+        
+        <rect x="10" y="85" width="80" height="45" rx="5" fill="#f5f7fa" />
+        <text x="50" y="113" text-anchor="middle" font-size="10" fill="#333">대피 경로 확인</text>
+        
+        <rect x="10" y="140" width="80" height="45" rx="5" fill="#f5f7fa" />
+        <text x="50" y="168" text-anchor="middle" font-size="10" fill="#333">화재 신고 방법</text>
+        
+        <rect x="10" y="195" width="80" height="45" rx="5" fill="#f5f7fa" />
+        <text x="50" y="223" text-anchor="middle" font-size="10" fill="#333">소화전 사용법</text>
+    </g>
+</svg>

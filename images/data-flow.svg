@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="250" viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1e88e5" />
+    </marker>
+    <linearGradient id="sourceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f7fa" />
+      <stop offset="100%" stop-color="#e4e7eb" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 다양한 데이터 소스 -->
+  <rect x="20" y="40" width="120" height="60" rx="10" fill="url(#sourceGradient)" stroke="#1e88e5" stroke-width="2" />
+  <text x="80" y="70" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">고용노동부</text>
+  <text x="80" y="90" text-anchor="middle" font-size="12" fill="#666">산업재해통계</text>
+  
+  <rect x="20" y="110" width="120" height="60" rx="10" fill="url(#sourceGradient)" stroke="#1e88e5" stroke-width="2" />
+  <text x="80" y="140" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">안전보건공단</text>
+  <text x="80" y="160" text-anchor="middle" font-size="12" fill="#666">위험성평가 데이터</text>
+  
+  <rect x="20" y="180" width="120" height="60" rx="10" fill="url(#sourceGradient)" stroke="#1e88e5" stroke-width="2" />
+  <text x="80" y="210" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">기업 데이터</text>
+  <text x="80" y="230" text-anchor="middle" font-size="12" fill="#666">점검 결과, 사고기록</text>
+  
+  <!-- 화살표 1 -->
+  <line x1="140" y1="70" x2="190" y2="120" stroke="#1e88e5" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="140" y1="140" x2="190" y2="140" stroke="#1e88e5" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="140" y1="210" x2="190" y2="160" stroke="#1e88e5" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- 데이터 통합 -->
+  <rect x="200" y="90" width="120" height="100" rx="10" fill="url(#sourceGradient)" stroke="#1e88e5" stroke-width="2" />
+  <text x="260" y="125" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">데이터 통합</text>
+  <text x="260" y="145" text-anchor="middle" font-size="12" fill="#666">전처리 및 정제</text>
+  <text x="260" y="165" text-anchor="middle" font-size="12" fill="#666">표준화 및 연계</text>
+  
+  <!-- 화살표 2 -->
+  <line x1="320" y1="140" x2="380" y2="140" stroke="#1e88e5" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- 분석 모델 -->
+  <rect x="380" y="90" width="120" height="100" rx="10" fill="url(#sourceGradient)" stroke="#1e88e5" stroke-width="2" />
+  <text x="440" y="125" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">데이터 분석</text>
+  <text x="440" y="145" text-anchor="middle" font-size="12" fill="#666">머신러닝 모델</text>
+  <text x="440" y="165" text-anchor="middle" font-size="12" fill="#666">패턴 인식</text>
+  
+  <!-- 화살표 3 -->
+  <line x1="500" y1="140" x2="560" y2="140" stroke="#1e88e5" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- 맞춤형 정보 -->
+  <rect x="560" y="50" width="120" height="60" rx="10" fill="url(#sourceGradient)" stroke="#1e88e5" stroke-width="2" />
+  <text x="620" y="80" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">위험 예측</text>
+  <text x="620" y="100" text-anchor="middle" font-size="12" fill="#666">선제적 위험 식별</text>
+  
+  <rect x="560" y="120" width="120" height="60" rx="10" fill="url(#sourceGradient)" stroke="#1e88e5" stroke-width="2" />
+  <text x="620" y="150" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">맞춤형 솔루션</text>
+  <text x="620" y="170" text-anchor="middle" font-size="12" fill="#666">사업장 특성 기반</text>
+  
+  <rect x="560" y="190" width="120" height="60" rx="10" fill="url(#sourceGradient)" stroke="#1e88e5" stroke-width="2" />
+  <text x="620" y="220" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">실시간 모니터링</text>
+  <text x="620" y="240" text-anchor="middle" font-size="12" fill="#666">알림 및 대응</text>
+  
+  <!-- 화살표 4 -->
+  <line x1="680" y1="80" x2="730" y2="80" stroke="#1e88e5" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="680" y1="150" x2="730" y2="150" stroke="#1e88e5" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="680" y1="220" x2="730" y2="220" stroke="#1e88e5" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- 최종 결과 -->
+  <rect x="730" y="50" width="50" height="180" rx="10" fill="#1e88e5" stroke="#1565c0" stroke-width="2" />
+  <text x="755" y="140" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff" transform="rotate(90, 755, 140)">안전한 사업장</text>
+  
+  <!-- 데이터 피드백 루프 -->
+  <path d="M 620,50 C 620,20 260,20 260,90" stroke="#ffa000" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+  <text x="440" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffa000">데이터 피드백 루프 - 지속적 개선</text>
+</svg>

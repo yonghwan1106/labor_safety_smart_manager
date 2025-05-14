@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#1976d2" />
+            <stop offset="100%" stop-color="#1565c0" />
+        </linearGradient>
+        <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.2" />
+        </filter>
+        <linearGradient id="riskGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#f44336" />
+            <stop offset="50%" stop-color="#ffa000" />
+            <stop offset="100%" stop-color="#4caf50" />
+        </linearGradient>
+    </defs>
+    
+    <!-- 배경 패널 -->
+    <rect x="0" y="0" width="800" height="500" rx="10" fill="#f5f7fa" />
+    
+    <!-- 상단 헤더 -->
+    <rect x="0" y="0" width="800" height="60" rx="10 10 0 0" fill="url(#headerGradient)" />
+    
+    <!-- 헤더 내용 -->
+    <g>
+        <!-- 로고 아이콘 -->
+        <g transform="translate(20, 10) scale(0.4)">
+            <circle cx="50" cy="50" r="45" fill="#1e88e5" />
+            <path d="M50,20 C40,20 32,25 30,35 L30,40 L70,40 L70,35 C68,25 60,20 50,20 Z" fill="#ffffff" />
+            <path d="M30,40 L32,55 L68,55 L70,40 Z" fill="#ffffff" />
+            <polyline points="35,65 45,55 55,65 65,50" fill="none" stroke="#ffffff" stroke-width="3" />
+            <circle cx="35" cy="65" r="3" fill="#ffa000" />
+            <circle cx="45" cy="55" r="3" fill="#ffa000" />
+            <circle cx="55" cy="65" r="3" fill="#ffa000" />
+            <circle cx="65" cy="50" r="3" fill="#ffa000" />
+        </g>
+        
+        <text x="80" y="38" font-size="24" font-weight="bold" fill="#fff">스마트 안전진단</text>
+        <text x="780" y="38" text-anchor="end" font-size="16" fill="#fff">맞춤형 위험성평가</text>
+    </g>
+    
+    <!-- 사업장 정보 패널 -->
+    <rect x="20" y="80" width="760" height="100" rx="10" fill="#fff" stroke="#ddd" filter="url(#dropShadow)" />
+    <text x="40" y="110" font-size="18" font-weight="bold" fill="#333">사업장 정보</text>
+    <line x1="40" y1="120" x2="760" y2="120" stroke="#eee" />
+    
+    <!-- 사업장 정보 내용 -->
+    <g>
+        <rect x="40" y="130" width="160" height="40" rx="5" fill="#f5f7fa" />
+        <text x="50" y="155" font-size="14" fill="#666">업종</text>
+        <text x="195" y="155" text-anchor="end" font-size="14" font-weight="bold" fill="#333">제조업 (금속가공)</text>
+        
+        <rect x="210" y="130" width="120" height="40" rx="5" fill="#f5f7fa" />
+        <text x="220" y="155" font-size="14" fill="#666">규모</text>
+        <text x="300" y="155" text-anchor="end" font-size="14" font-weight="bold" fill="#333">30인</text>
+        
+        <rect x="340" y="130" width="150" height="40" rx="5" fill="#f5f7fa" />
+        <text x="350" y="155" font-size="14" fill="#666">위험등급</text>
+        <rect x="460" y="140" width="20" height="10" rx="5" fill="url(#riskGradient)" />
+        <text x="450" y="155" text-anchor="end" font-size="14" font-weight="bold" fill="#ffa000">중간</text>
+        
+        <rect x="500" y="130" width="260" height="40" rx="5" fill="#f5f7fa" />
+        <text x="510" y="155" font-size="14" fill="#666">최근 진단</text>
+        <text x="730" y="155" text-anchor="end" font-size="14" font-weight="bold" fill="#333">2025-04-01</text>
+    </g>
+    
+    <!-- 위험성평가 체크리스트 패널 -->
+    <rect x="20" y="200" width="760" height="295" rx="10" fill="#fff" stroke="#ddd" filter="url(#dropShadow)" />
+    <text x="40" y="230" font-size="18" font-weight="bold" fill="#333">맞춤형 위험성평가 체크리스트</text>
+    <line x1="40" y1="240" x2="760" y2="240" stroke="#eee" />
+    
+    <!-- 체크리스트 항목들 -->
+    <g>
+        <!-- 항목 1 -->
+        <g>
+            <rect x="40" y="260" width="720" height="50" rx="5" fill="#f5f7fa" />
+            <text x="60" y="280" font-size="14" font-weight="bold" fill="#333">1. 프레스 및 전단기 안전장치 작동 상태</text>
+            <text x="60" y="300" font-size="12" fill="#666">적정 상태: 비상정지 장치, 양수조작식 작동버튼, 방호덮개 상태 확인</text>
+            
+            <!-- 체크 버튼 -->
+            <circle cx="720" cy="285" r="18" stroke="#1e88e5" stroke-width="2" fill="#fff" />
+            <circle cx="720" cy="285" r="12" fill="#1e88e5" />
+            <path d="M713,285 L718,290 L727,280" stroke="#fff" stroke-width="2" fill="none" />
+        </g>
+        
+        <!-- 항목 2 -->
+        <g>
+            <rect x="40" y="320" width="720" height="50" rx="5" fill="#f5f7fa" />
+            <text x="60" y="340" font-size="14" font-weight="bold" fill="#333">2. 작업자 보호구(안전화, 안전장갑) 착용 상태</text>
+            <text x="60" y="360" font-size="12" fill="#666">적정 상태: 작업별 필수 보호구 착용, 보호구 상태 양호, 적절한 착용 방법</text>
+            
+            <!-- 체크 버튼 -->
+            <circle cx="720" cy="345" r="18" stroke="#1e88e5" stroke-width="2" fill="#fff" />
+            <circle cx="720" cy="345" r="12" fill="#1e88e5" />
+            <path d="M713,345 L718,350 L727,340" stroke="#fff" stroke-width="2" fill="none" />
+        </g>
+        
+        <!-- 항목 3 - 미체크 및 특별 강조 -->
+        <g>
+            <rect x="40" y="380" width="720" height="50" rx="5" fill="#fff8e1" />
+            <rect x="40" y="380" width="5" height="50" fill="#ffa000" rx="5 0 0 5" />
+            <text x="60" y="400" font-size="14" font-weight="bold" fill="#333">3. 전기 설비 접지 및 누전차단기 설치 상태</text>
+            <text x="60" y="420" font-size="12" fill="#666">적정 상태: 접지선 연결 상태, 누전차단기 동작 테스트, 전선 피복 상태</text>
+            
+            <!-- 체크 버튼 - 미체크 -->
+            <circle cx="720" cy="405" r="18" stroke="#ffa000" stroke-width="2" fill="#fff" />
+        </g>
+        
+        <!-- 항목 4 -->
+        <g>
+            <rect x="40" y="440" width="720" height="50" rx="5" fill="#f5f7fa" />
+            <text x="60" y="460" font-size="14" font-weight="bold" fill="#333">4. 화재 감지 및 소화 설비 점검 상태</text>
+            <text x="60" y="480" font-size="12" fill="#666">적정 상태: 소화기 압력 게이지, 화재감지기 동작, 피난 경로 확보</text>
+            
+            <!-- 체크 버튼 -->
+            <circle cx="720" cy="465" r="18" stroke="#1e88e5" stroke-width="2" fill="#fff" />
+            <circle cx="720" cy="465" r="12" fill="#1e88e5" />
+            <path d="M713,465 L718,470 L727,460" stroke="#fff" stroke-width="2" fill="none" />
+        </g>
+    </g>
+    
+  
+</svg>

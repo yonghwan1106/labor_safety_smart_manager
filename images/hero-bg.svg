@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1976d2" />
+      <stop offset="100%" stop-color="#1565c0" />
+    </linearGradient>
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.1" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- 배경 -->
+  <rect width="1200" height="600" fill="url(#gradient)" />
+  
+  <!-- 패턴 그리드 -->
+  <g opacity="0.07">
+    <path d="M0,0 L1200,0 L1200,600 L0,600 Z" fill="none" stroke="#ffffff" stroke-width="1" />
+    <!-- 세로 선 -->
+    <line x1="100" y1="0" x2="100" y2="600" stroke="#ffffff" stroke-width="1" />
+    <line x1="200" y1="0" x2="200" y2="600" stroke="#ffffff" stroke-width="1" />
+    <line x1="300" y1="0" x2="300" y2="600" stroke="#ffffff" stroke-width="1" />
+    <line x1="400" y1="0" x2="400" y2="600" stroke="#ffffff" stroke-width="1" />
+    <line x1="500" y1="0" x2="500" y2="600" stroke="#ffffff" stroke-width="1" />
+    <line x1="600" y1="0" x2="600" y2="600" stroke="#ffffff" stroke-width="1" />
+    <line x1="700" y1="0" x2="700" y2="600" stroke="#ffffff" stroke-width="1" />
+    <line x1="800" y1="0" x2="800" y2="600" stroke="#ffffff" stroke-width="1" />
+    <line x1="900" y1="0" x2="900" y2="600" stroke="#ffffff" stroke-width="1" />
+    <line x1="1000" y1="0" x2="1000" y2="600" stroke="#ffffff" stroke-width="1" />
+    <line x1="1100" y1="0" x2="1100" y2="600" stroke="#ffffff" stroke-width="1" />
+    
+    <!-- 가로 선 -->
+    <line x1="0" y1="100" x2="1200" y2="100" stroke="#ffffff" stroke-width="1" />
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="#ffffff" stroke-width="1" />
+    <line x1="0" y1="300" x2="1200" y2="300" stroke="#ffffff" stroke-width="1" />
+    <line x1="0" y1="400" x2="1200" y2="400" stroke="#ffffff" stroke-width="1" />
+    <line x1="0" y1="500" x2="1200" y2="500" stroke="#ffffff" stroke-width="1" />
+  </g>
+  
+  <!-- 물결 패턴 -->
+  <path d="M0,550 C200,500 400,600 600,550 C800,500 1000,600 1200,550 L1200,600 L0,600 Z" fill="#ffffff" opacity="0.1" />
+  <path d="M0,570 C200,520 400,620 600,570 C800,520 1000,620 1200,570 L1200,600 L0,600 Z" fill="#ffffff" opacity="0.2" />
+  
+  <!-- 산업안전 아이콘들 -->
+  <!-- 안전모 아이콘 -->
+  <path d="M200,100 C200,80 220,70 240,70 C260,70 280,80 280,100 L280,130 L290,130 L290,150 L190,150 L190,130 L200,130 Z" 
+        fill="url(#iconGradient)" filter="url(#glow)" />
+  
+  <!-- 안전 체크리스트 아이콘 -->
+  <g transform="translate(800, 150)">
+    <rect x="0" y="0" width="80" height="100" rx="5" fill="url(#iconGradient)" filter="url(#glow)" />
+    <line x1="15" y1="20" x2="65" y2="20" stroke="#ffffff" stroke-width="2" />
+    <line x1="15" y1="40" x2="65" y2="40" stroke="#ffffff" stroke-width="2" />
+    <line x1="15" y1="60" x2="65" y2="60" stroke="#ffffff" stroke-width="2" />
+    <line x1="15" y1="80" x2="65" y2="80" stroke="#ffffff" stroke-width="2" />
+  </g>
+  
+  <!-- 데이터 차트 아이콘 -->
+  <g transform="translate(400, 200)">
+    <rect x="0" y="0" width="80" height="80" rx="5" fill="url(#iconGradient)" filter="url(#glow)" />
+    <polyline points="10,70 10,20 30,40 50,15 70,30 70,70" fill="none" stroke="#ffffff" stroke-width="2" />
+    <circle cx="30" cy="40" r="3" fill="#ffffff" />
+    <circle cx="50" cy="15" r="3" fill="#ffffff" />
+    <circle cx="70" cy="30" r="3" fill="#ffffff" />
+  </g>
+  
+  <!-- 경고 삼각형 아이콘 -->
+  <g transform="translate(950, 250)">
+    <path d="M0,80 L50,0 L100,80 Z" fill="url(#iconGradient)" filter="url(#glow)" />
+    <text x="50" y="60" text-anchor="middle" font-size="40" font-weight="bold" fill="#ffffff">!</text>
+  </g>
+  
+  <!-- 모바일 디바이스 아이콘 -->
+  <g transform="translate(300, 400)">
+    <rect x="0" y="0" width="40" height="70" rx="5" fill="url(#iconGradient)" filter="url(#glow)" />
+    <rect x="5" y="5" width="30" height="50" rx="2" fill="none" stroke="#ffffff" stroke-width="1" />
+    <circle cx="20" cy="65" r="3" fill="#ffffff" />
+  </g>
+  
+  <!-- 안전 센서 아이콘 -->
+  <g transform="translate(700, 350)">
+    <circle cx="40" cy="40" r="40" fill="url(#iconGradient)" filter="url(#glow)" />
+    <circle cx="40" cy="40" r="30" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="5,5" />
+    <circle cx="40" cy="40" r="15" fill="#ffffff" opacity="0.5" />
+    <circle cx="40" cy="40" r="7" fill="#ffffff" />
+  </g>
+  
+  <!-- 연결선 -->
+  <g opacity="0.3">
+    <line x1="240" y1="150" x2="400" y2="200" stroke="#ffffff" stroke-width="1" stroke-dasharray="5,5" />
+    <line x1="480" y1="240" x2="700" y2="350" stroke="#ffffff" stroke-width="1" stroke-dasharray="5,5" />
+    <line x1="740" y1="350" x2="950" y2="250" stroke="#ffffff" stroke-width="1" stroke-dasharray="5,5" />
+    <line x1="840" y1="200" x2="950" y2="250" stroke="#ffffff" stroke-width="1" stroke-dasharray="5,5" />
+    <line x1="340" y1="435" x2="700" y2="390" stroke="#ffffff" stroke-width="1" stroke-dasharray="5,5" />
+  </g>
+</svg>
