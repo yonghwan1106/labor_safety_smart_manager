@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세이프티 스마트 매니저 - 고용노동 공공데이터 활용 공모전</title>
+    <meta name="description" content="중소기업을 위한 지능형 산업안전 관리 플랫폼. 공공데이터 기반 예측으로 산업재해를 예방하고 안전한 일터를 만듭니다.">
+    <meta name="keywords" content="산업안전, 중소기업, 재해예방, 공공데이터, 안전관리, 데이터 분석, 고용노동부, 산업안전보건공단">
+    <meta name="author" content="세이프티 스마트 매니저 팀">
+    
+    <!-- Open Graph 태그 -->
+    <meta property="og:title" content="세이프티 스마트 매니저 - 중소기업 산업안전 솔루션">
+    <meta property="og:description" content="데이터 기반 예측으로 산업재해를 예방하고 안전한 일터를 만듭니다.">
+    <meta property="og:image" content="images/og-image.svg">
+    <meta property="og:url" content="https://safety-smart-manager.kr">
+    <meta property="og:type" content="website">
+    
+    <!-- 리소스 미리 로드 -->
+    <link rel="preload" href="images/logo_improved.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="images/mockup.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    
+    <!-- 파비콘 -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- 히어로 섹션 스타일 수정 -->
+<style>
+/* 기본 변수 정의 */
+:root {
+    --primary: #1e88e5;
+    --primary-dark: #1565c0;
+    --primary-light: #bbdefb;
+    --secondary: #ffa000;
+    --secondary-dark: #ff8f00;
+    --secondary-light: #ffca28;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    --shadow-md: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    --shadow-lg: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+/* 히어로 섹션 스타일 수정 */
+.hero {
+    position: relative;
+    height: 70vh; /* 높이 조정 */
+    min-height: 450px; /* 최소 높이 설정 */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-color: #f5f7fa;
+    padding-top: 0; /* 상단 패딩 제거 */
+}
+
+.hero-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    height: 100%; /* 추가 */
+    align-items: center; /* 가운데 정렬 */
+}
+
+/* 왼쪽 콘텐츠 */
+.hero-content-wrapper {
+    flex: 1;
+    padding-right: 2rem;
+    z-index: 2;
+}
+
+/* 오른쪽 이미지 슬라이더 */
+.hero-slider-wrapper {
+    flex: 1;
+    position: relative;
+    height: 400px; /* 고정 높이 설정 */
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    margin: 10px 0; /* 여백 감소 */
+}
+
+/* 슬라이드 이미지 */
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+/* 히어로 콘텐츠 스타일 */
+.hero-content {
+    text-align: left;
+    color: var(--text-primary);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* 버튼 스타일 */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(30, 136, 229, 0.3);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 6px 20px rgba(30, 136, 229, 0.4);
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 160, 0, 0.3);
+}
+
+.btn-secondary:hover {
+    box-shadow: 0 6px 20px rgba(255, 160, 0, 0.4);
+    transform: translateY(-3px);
+}
+
+/* 슬라이드 인디케이터 스타일 */
+.slide-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 2;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background-color: var(--primary);
+    transform: scale(1.2);
+}
+
+/* 애니메이션 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 반응형 스타일 */
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column;
+    }
+    
+    .hero-content-wrapper {
+        padding-right: 0;
+        padding-bottom: 2rem;
+    }
+    
+    .hero-slider-wrapper {
+        height: 300px;
+        width: 100%;
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 3rem 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+}
+
+/* 활용 사례 섹션 개선 */
+.testimonials-section {
+    background-color: #f8fafd;
+    padding: 5rem 0;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid var(--primary);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-content {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 0.5rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.testimonial-content::before {
+    content: '\201C';
+    font-size: 4rem;
+    color: var(--primary-light);
+    position: absolute;
+    top: -2rem;
+    left: -1rem;
+    opacity: 0.3;
+    font-family: serif;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    object-fit: cover;
+    border: 3px solid var(--primary-light);
+}
+
+.testimonial-name {
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--primary-dark);
+}
+
+.testimonial-position {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.testimonial-rating {
+    display: flex;
+    margin-bottom: 1rem;
+    color: #FFD700;
+}
+
+.testimonial-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+</style>
+
+<!-- CSS 추가 필요: -->
+<style>
+.feature-item {
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-image {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+.feature-image img {
+    transition: transform 0.5s ease;
+}
+
+.feature-item:hover .feature-image img {
+    transform: scale(1.03);
+}
+
+.feature-content {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.feature-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1.5rem;
+}
+
+.feature-list li {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.text-success {
+    color: var(--success) !important;
+}
+
+.me-2 {
+    margin-right: 0.5rem;
+}
+
+.rounded {
+    border-radius: 12px !important;
+}
+
+.shadow-lg {
+    box-shadow: var(--shadow-lg) !important;
+}
+
+@media (max-width: 767px) {
+    .feature-item {
+        margin-bottom: 3rem;
+    }
+    
+    .feature-image {
+        margin-bottom: 1.5rem;
+    }
+}
+</style>
+
+<style>
+/* 기능 카드 스타일 */
+.features-row {
+    justify-content: center;
+}
+
+.feature-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-image {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.feature-card:hover .feature-image img {
+    transform: scale(1.05);
+}
+
+.feature-info {
+    padding: 1.5rem;
+    position: relative;
+}
+
+.feature-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--primary-dark);
+}
+
+.feature-tag {
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    background-color: var(--primary);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.feature-meta {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.feature-meta p {
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.feature-meta i {
+    margin-right: 0.5rem;
+    color: var(--primary);
+    width: 16px;
+    text-align: center;
+}
+
+.feature-desc {
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.feature-programs {
+    background-color: var(--gray-light);
+    margin: 0 -1.5rem -1.5rem -1.5rem;
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid var(--gray);
+}
+
+.feature-programs h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--primary-dark);
+}
+
+.feature-programs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-programs li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.feature-programs i {
+    color: var(--primary);
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 992px) {
+    .col-md-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .feature-image {
+        height: 180px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+    <!-- 스크린리더를 위한 설명 -->
+    <div class="sr-only" aria-hidden="false">
+        이 웹사이트는 세이프티 스마트 매니저 플랫폼에 대한 소개를 위한 페이지입니다. 중소기업을 위한 지능형 산업안전 관리 플랫폼으로, 고용노동 공공데이터를 활용하여 산업재해를 예방하고 중소기업의 안전 관리를 지원합니다.
+    </div>
+    <!-- 상단 네비게이션 -->
+    <nav class="navbar" role="navigation" aria-label="주요 네비게이션">
+        <div class="container">
+            <div class="logo">
+                <img src="images/g_logo.jpeg" alt="세이프티 스마트 매니저 로고">
+                <h1>세이프티 스마트 매니저</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">소개</a></li>
+                <li><a href="#features">주요 기능</a></li>
+                <li><a href="#data">데이터 활용</a></li>
+                <li><a href="#benefits">기대효과</a></li>
+                <li><a href="#demo">데모</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+   
+<!-- 히어로 섹션 HTML -->
+<section class="hero" id="home">
+    <div class="hero-container">
+        <!-- 왼쪽 콘텐츠 -->
+        <div class="hero-content-wrapper">
+            <div class="hero-content">
+                <h1>산업 현장의 안전을<br>책임지는 스마트 솔루션</h1>
+                <p>고용노동부 공공데이터를 활용한 인공지능 기반 산업재해 예방 플랫폼</p>
+                <div class="hero-buttons">
+                    <a href="#features" class="btn btn-primary">주요 기능</a>
+                    <a href="#demo" class="btn btn-secondary">데모 보기</a>
+                    <a href="https://notebooklm.google.com/notebook/d90126e7-293a-4c7a-a41e-48035f23c71c/audio" class="btn btn-primary">음성 듣기 (7초후 재생)</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 오른쪽 이미지 슬라이더 -->
+        <div class="hero-slider-wrapper">
+            <div class="hero-slide" style="background-image: url('images/smart_risk_prediction_engine.png');"></div>
+            <div class="hero-slide" style="background-image: url('images/customized_safety_dashboard.png');"></div>
+            <div class="hero-slide" style="background-image: url('images/intelligent_safety_training_system.png');"></div>
+            <div class="hero-slide" style="background-image: url('images/mobile_safety_inspection_tool.png');"></div>
+            <div class="hero-slide" style="background-image: url('images/safety_data_integration_hub.png');"></div>
+            
+            <!-- 슬라이드 인디케이터 -->
+            <div class="slide-indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+                <span class="indicator" data-slide="3"></span>
+                <span class="indicator" data-slide="4"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- 소개 섹션 -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>일터를 더 안전하게, 데이터로 만드는 변화</h2>
+                <p>중소기업의 산업안전 문제를 해결하기 위한 혁신적인 접근</p>
+            </div>
+            <div class="about-content">
+                <div class="problem-statement">
+                    <h3>문제 상황</h3>
+                    <div class="stat-cards">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                            <h4>3배</h4>
+                            <p>중소기업 재해율은 대기업의 약 3배</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                            <h4>80%</h4>
+                            <p>전체 산업재해의 약 80%가 50인 미만 중소기업에서 발생</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-user-shield"></i></div>
+                            <h4>부재</h4>
+                            <p>50인 미만 사업장은 안전관리자 선임 의무 없음</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="solution-approach">
+                    <h3>해결 방안</h3>
+                    <div class="approach-content">
+                        <div class="approach-image">
+                            <img src="images/data-flow.svg" alt="데이터 기반 안전관리 흐름도">
+                        </div>
+                        <div class="approach-text">
+                            <ul class="solution-list">
+                                <li><i class="fas fa-check-circle"></i> <strong>맞춤형 안전관리:</strong> 사업장 특성 기반 안전관리 방안</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>데이터 기반 예측:</strong> AI로 위험 요소 사전 식별</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>현장 중심 설계:</strong> 모바일 앱과 QR코드로 접근성 강화</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>비용 효율화:</strong> 투자 우선순위 제안 및 정부 지원 정보</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- 주요 기능 섹션 - 카드 레이아웃 (3*2 형태) -->
+<section id="features" class="py-5">
+        <div class="container">
+            <div class="section-header">
+                <h2>주요 기능</h2>>
+        <p class="text-center mb-5">산업 현장의 안전을 책임지는 스마트 솔루션의 핵심 기능들을 소개합니다.</p>
+                    </div>
+        <!-- 첫 번째 줄: 3개 카드 -->
+        <div class="row features-row mb-4">
+            <!-- 기능 카드 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="images/smart_risk_prediction_engine.png" alt="스마트 위험 예측 엔진" class="img-fluid">
+                    </div>
+                    <div class="feature-info">
+                        <h3 class="feature-title">스마트 위험 예측 엔진</h3>
+                        <div class="feature-tag">핵심 기능</div>
+                        
+                        <div class="feature-meta">
+                            <p><i class="fas fa-cogs"></i> 인공지능 기반 분석</p>
+                            <p><i class="fas fa-chart-line"></i> 실시간 위험 모니터링</p>
+                        </div>
+                        
+                        <p class="feature-desc">
+                            공공데이터와 AI를 결합하여 현장의 잠재적 위험을 사전에 감지합니다. 데이터 기반 예측으로 위험 상황을 조기에 식별하고 선제적 대응이 가능합니다.
+                        </p>
+                        
+                        <div class="feature-programs">
+                            <h4>주요 기능 모듈</h4>
+                            <ul>
+                                <li><i class="fas fa-angle-right"></i> 위험 지수 분석 시스템</li>
+                                <li><i class="fas fa-angle-right"></i> 패턴 인식 알고리즘</li>
+                                <li><i class="fas fa-angle-right"></i> 산업 유형별 맞춤 예측</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 기능 카드 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="images/customized_safety_dashboard.png" alt="맞춤형 안전 대시보드" class="img-fluid">
+                    </div>
+                    <div class="feature-info">
+                        <h3 class="feature-title">맞춤형 안전 대시보드</h3>
+                        <div class="feature-tag">핵심 기능</div>
+                        
+                        <div class="feature-meta">
+                            <p><i class="fas fa-desktop"></i> 직관적 인터페이스</p>
+                            <p><i class="fas fa-mobile-alt"></i> PC/모바일 호환</p>
+                        </div>
+                        
+                        <p class="feature-desc">
+                            사업장 특성에 맞춘 직관적인 안전 현황 대시보드로 안전 지표와 현황을 한눈에 파악할 수 있습니다. 관리자와 작업자 모두 쉽게 활용 가능합니다.
+                        </p>
+                        
+                        <div class="feature-programs">
+                            <h4>주요 기능 모듈</h4>
+                            <ul>
+                                <li><i class="fas fa-angle-right"></i> 실시간 안전 지수 모니터링</li>
+                                <li><i class="fas fa-angle-right"></i> 맞춤형 위험 요소 시각화</li>
+                                <li><i class="fas fa-angle-right"></i> 일일/주간/월간 보고서</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 기능 카드 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="images/intelligent_safety_training_system.png" alt="지능형 안전 교육 시스템" class="img-fluid">
+                    </div>
+                    <div class="feature-info">
+                        <h3 class="feature-title">지능형 안전 교육 시스템</h3>
+                        <div class="feature-tag">핵심 기능</div>
+                        
+                        <div class="feature-meta">
+                            <p><i class="fas fa-user-graduate"></i> 맞춤형 교육 콘텐츠</p>
+                            <p><i class="fas fa-history"></i> 교육 이력 관리</p>
+                        </div>
+                        
+                        <p class="feature-desc">
+                            작업자 직무와 경험에 따른 맞춤형 안전 교육과 체계적인 교육 이력 관리로 안전 의식을 강화합니다. 모바일 기기 지원으로 시공간 제약 없이 학습이 가능합니다.
+                        </p>
+                        
+                        <div class="feature-programs">
+                            <h4>주요 기능 모듈</h4>
+                            <ul>
+                                <li><i class="fas fa-angle-right"></i> 직무별 교육 콘텐츠 제공</li>
+                                <li><i class="fas fa-angle-right"></i> 교육 효과성 평가</li>
+                                <li><i class="fas fa-angle-right"></i> 법정 의무교육 관리</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 두 번째 줄: 2개 카드 중앙 정렬 -->
+        <div class="row justify-content-center">
+            <!-- 기능 카드 4 -->
+            <div class="col-md-4 mb-4 mx-md-2">
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="images/mobile_safety_inspection_tool.png" alt="모바일 안전 점검 도구" class="img-fluid">
+                    </div>
+                    <div class="feature-info">
+                        <h3 class="feature-title">모바일 안전 점검 도구</h3>
+                        <div class="feature-tag">핵심 기능</div>
+                        
+                        <div class="feature-meta">
+                            <p><i class="fas fa-qrcode"></i> QR코드 기반 점검</p>
+                            <p><i class="fas fa-clipboard-check"></i> 현장 점검 자동화</p>
+                        </div>
+                        
+                        <p class="feature-desc">
+                            현장에서 QR코드를 스캔하여 설비별 안전 정보 확인 및 점검 작업을 간편하게 수행합니다. 점검 결과는 실시간으로 시스템에 반영됩니다.
+                        </p>
+                        
+                        <div class="feature-programs">
+                            <h4>주요 기능 모듈</h4>
+                            <ul>
+                                <li><i class="fas fa-angle-right"></i> 설비별 QR코드 생성</li>
+                                <li><i class="fas fa-angle-right"></i> 현장 점검 체크리스트</li>
+                                <li><i class="fas fa-angle-right"></i> 안전 위반 신고 시스템</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 기능 카드 5 -->
+            <div class="col-md-4 mb-4 mx-md-2">
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="images/safety_data_integration_hub.png" alt="안전 데이터 통합 허브" class="img-fluid">
+                    </div>
+                    <div class="feature-info">
+                        <h3 class="feature-title">안전 데이터 통합 허브</h3>
+                        <div class="feature-tag">핵심 기능</div>
+                        
+                        <div class="feature-meta">
+                            <p><i class="fas fa-database"></i> 다중 데이터 통합</p>
+                            <p><i class="fas fa-exchange-alt"></i> 실시간 정보 교환</p>
+                        </div>
+                        
+                        <p class="feature-desc">
+                            다양한 출처의 안전 데이터를 통합하여 종합적인 분석과 인사이트를 제공합니다. 공공 데이터와 기업 내부 데이터를 연계하여 시너지를 발휘합니다.
+                        </p>
+                        
+                        <div class="feature-programs">
+                            <h4>주요 기능 모듈</h4>
+                            <ul>
+                                <li><i class="fas fa-angle-right"></i> 데이터 소스 연결 관리</li>
+                                <li><i class="fas fa-angle-right"></i> 고급 데이터 분석 도구</li>
+                                <li><i class="fas fa-angle-right"></i> 맞춤형 보고서 생성</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- 데이터 활용 섹션 -->
+    <section id="data" class="section data-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>고용노동 공공데이터 활용</h2>
+                <p>다양한 공공데이터를 융합하여 가치 있는 인사이트 도출</p>
+            </div>
+            <div class="data-content">
+                <div class="data-sources">
+                    <h3>활용 데이터</h3>
+                    <div class="data-grid">
+                        <div class="data-card">
+                            <h4>고용노동부</h4>
+                            <ul>
+                                <li>산업재해현황</li>
+                                <li>산업재해 발생형태 코드</li>
+                                <li>상해종류 코드</li>
+                                <li>연도별 산업재해발생 공표내역</li>
+                            </ul>
+                        </div>
+                        <div class="data-card">
+                            <h4>한국산업안전보건공단</h4>
+                            <ul>
+                                <li>규모별 사업장수/재해자수</li>
+                                <li>건설업 공종별 세부공정 목록</li>
+                                <li>업종별 기계설비 목록</li>
+                                <li>보호구 인증 현황</li>
+                                <li>근로환경조사</li>
+                            </ul>
+                        </div>
+                        <div class="data-card">
+                            <h4>기타 산하기관</h4>
+                            <ul>
+                                <li>근로복지공단 - 산재보험급여 지급 현황</li>
+                                <li>한국고용정보원 - 산업/직업별 고용구조</li>
+                                <li>한국장애인고용공단 - 산업재해장애인 취업현황</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+
+
+    <!-- 기대효과 섹션 -->
+    <section id="benefits" class="section benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>기대효과</h2>
+                <p>데이터로 만드는 안전한 일터와 경제적 가치</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-heart"></i></div>
+                    <h3>산업재해 감소</h3>
+                    <p>체계적인 위험 관리를 통해 중소기업 산업재해율 저감</p>
+                    <div class="benefit-stat">
+                        <div class="stat-value">-30%</div>
+                        <div class="stat-desc">잠재적 산업재해 감소 효과</div>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-coins"></i></div>
+                    <h3>비용 절감</h3>
+                    <p>산업재해 예방을 통한 경제적 손실 및 보험료 절감</p>
+                    <div class="benefit-stat">
+                        <div class="stat-value">+20%</div>
+                        <div class="stat-desc">안전 투자 효율성 향상</div>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-tasks"></i></div>
+                    <h3>업무 효율화</h3>
+                    <p>안전관리 업무 자동화 및 디지털화를 통한 효율 향상</p>
+                    <div class="benefit-stat">
+                        <div class="stat-value">-40%</div>
+                        <div class="stat-desc">안전관리 행정업무 시간 감소</div>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h3>안전 격차 해소</h3>
+                    <p>대기업-중소기업 간 안전관리 역량 격차 해소</p>
+                    <div class="benefit-stat">
+                        <div class="stat-value">+50%</div>
+                        <div class="stat-desc">중소기업 안전관리 역량 향상</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 데모 섹션 -->
+    <section id="demo" class="section demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>플랫폼 데모</h2>
+                <p>세이프티 스마트 매니저의 핵심 화면 살펴보기</p>
+            </div>
+            <div class="demo-content">
+                <div class="demo-tabs" role="tablist" aria-label="플랫폼 데모 탭">
+                    <button class="demo-tab active" id="tab-dashboard" data-tab="dashboard" role="tab" aria-selected="true" aria-controls="demo-screen">대시보드</button>
+                    <button class="demo-tab" id="tab-assessment" data-tab="assessment" role="tab" aria-selected="false" aria-controls="demo-screen">안전진단</button>
+                    <button class="demo-tab" id="tab-inspection" data-tab="inspection" role="tab" aria-selected="false" aria-controls="demo-screen">현장점검</button>
+                    <button class="demo-tab" id="tab-education" data-tab="education" role="tab" aria-selected="false" aria-controls="demo-screen">안전교육</button>
+                    <button class="demo-tab" id="tab-investment" data-tab="investment" role="tab" aria-selected="false" aria-controls="demo-screen">안전투자</button>
+                </div>
+                <div class="demo-display">
+                    <div id="demo-screen" class="demo-screen active" data-tab="dashboard" role="tabpanel" aria-labelledby="tab-dashboard">
+                        <img src="images/demo1.svg" alt="안전 대시보드 화면" class="demo-img active" id="dashboard-img">
+                        <img src="images/demo2.svg" alt="스마트 안전진단 화면" class="demo-img" id="assessment-img" style="display:none">
+                        <img src="images/demo3.svg" alt="현장점검 매니저 화면" class="demo-img" id="inspection-img" style="display:none">
+                        <img src="images/demo4.svg" alt="안전교육 도우미 화면" class="demo-img" id="education-img" style="display:none">
+                        <img src="images/demo5.svg" alt="안전투자 최적화 화면" class="demo-img" id="investment-img" style="display:none">
+                    </div>
+                    <div class="demo-description">
+                        <h3 id="demo-title">안전 대시보드</h3>
+                        <p id="demo-desc">종합적인 안전 현황과 우선 조치 항목을 한눈에 확인할 수 있는 메인 대시보드입니다. 오늘의 안전 지수, 주요 알림, 점검 일정 등을 제공합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+ 
+
+<!-- 활용 사례 섹션 - 형식 유지, 내용만 변경 -->
+<section id="testimonials" class="testimonials-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>사용자 시나리오</h2>
+            <p>세이프티 스마트 매니저가 현장에서 활용되는 사례 (예시)</p>
+        </div>
+        
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-tag">제조업</div>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="testimonial-content">
+                    <p>대한제조의 안전관리자로서 매일 아침 출근 후 첫 일은 세이프티 스마트 매니저에서 위험 예측 결과를 확인하는 것입니다. 지난주에는 시스템이 전기설비 관련 위험을 사전에 감지해 점검을 권고했고, 덕분에 접지 불량 문제를 조기에 발견하여 큰 사고를 예방할 수 있었습니다. 이런 데이터 기반 예측이 당사의 안전사고 발생률을 45% 감소시켰습니다.</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="images/man1.png" alt="김철수" class="testimonial-avatar">
+                    <div>
+                        <div class="testimonial-name">김철수</div>
+                        <div class="testimonial-position">안전관리자, 대한제조</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-tag">건설업</div>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="testimonial-content">
+                    <p>대규모 건설 현장에서 매주 안전 점검을 수행해야 했는데, 세이프티 스마트 매니저의 체크리스트 자동화 시스템이 업무 효율을 크게 높였습니다. 건물 각 구역에 QR코드를 부착하고 작업자들이 이를 스캔하면 해당 구역의 안전 수칙을 바로 확인할 수 있어요. 날씨 데이터와 연동된 알림 시스템은 강풍 예상 시 고층 작업 일정을 미리 조정할 수 있게 해줍니다.</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="이미영" class="testimonial-avatar">
+                    <div>
+                        <div class="testimonial-name">이미영</div>
+                        <div class="testimonial-position">HSE 담당자, 한국건설</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-tag">중공업</div>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="testimonial-content">
+                    <p>대형 선박 건조 현장에서 여러 협력업체와 작업자들의 안전을 관리하기 위해 세이프티 스마트 매니저의 모바일 앱을 활용합니다. 특히 용접 작업 구역에서 앱의 위험 감지 기능이 산소 농도 이상을 실시간으로 알려주어 즉시 작업을 중단시키고 환기 시스템을 가동하여 사고를 예방했습니다. 작업 구역별 QR코드로 안전 점검 이력을 언제든지 확인할 수 있어 큰 도움이 됩니다.</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="images/man2.png" alt="박준호" class="testimonial-avatar">
+                    <div>
+                        <div class="testimonial-name">박준호</div>
+                        <div class="testimonial-position">현장 책임자, 삼성중공업</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-tag">에너지</div>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="testimonial-content">
+                    <p>전국에 분산된 소규모 태양광 발전소의 안전 관리를 위해 세이프티 스마트 매니저를 도입했습니다. 각 발전소의 센서가 보내는 데이터를 AI가 분석하여 이상 징후를 탐지해주죠. 최근에는 강원도 발전소 인버터 과열 위험을 사전에 감지해 화재를 예방했습니다. 정부 지원 사업 정보도 자동으로 받아보며 안전 설비 투자 비용을 효율적으로 사용할 수 있게 되었습니다.</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="images/woman1.png" alt="최수진" class="testimonial-avatar">
+                    <div>
+                        <div class="testimonial-name">최수진</div>
+                        <div class="testimonial-position">CEO, 그린에너지</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- 구현 계획 섹션 -->
+    <section class="section roadmap-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>구현 로드맵</h2>
+                <p>단계적인 개발 및 출시 계획</p>
+            </div>
+            <div class="roadmap">
+                <div class="roadmap-timeline" id="roadmap-timeline">
+                    <!-- 로드맵이 JS로 삽입될 위치 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 섹션 -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>더 안전한 일터, 함께 만들어가요</h2>
+                <p>세이프티 스마트 매니저와 함께 산업안전의 새로운 패러다임을 열어갑니다</p>
+                <!--a href="#contact" class="btn primary">자세히 알아보기</a-->
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <!--img src="images/g_logo.jpeg" alt="세이프티 스마트 매니저 로고"-->
+                    <h4>세이프티 스마트 매니저</h4>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>플랫폼</h4>
+                        <ul>
+                            <li><a href="#features">주요 기능</a></li>
+                            <li><a href="#data">데이터 활용</a></li>
+                            <li><a href="#benefits">기대효과</a></li>
+                            <li><a href="#demo">데모</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>공모전</h4>
+                        <ul>
+                            <li><a href="#">고용노동 공공데이터 활용 공모전</a></li>
+                            <li><a href="#">고용노동부</a></li>
+                            <li><a href="#">한국산업안전보건공단</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 세이프티 스마트 매니저 | 제4회 고용노동 공공데이터 활용 공모전</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    // 데모 탭 관련 스크립트
+    document.addEventListener('DOMContentLoaded', function() {
+        const demoTabs = document.querySelectorAll('.demo-tab');
+        const demoScreen = document.getElementById('demo-screen');
+        const demoTitle = document.getElementById('demo-title');
+        const demoDesc = document.getElementById('demo-desc');
+        
+        // 탭 설명 내용
+        const tabContent = {
+            'dashboard': {
+                title: '안전 대시보드',
+                desc: '종합적인 안전 현황과 우선 조치 항목을 한눈에 확인할 수 있는 메인 대시보드입니다. 오늘의 안전 지수, 주요 알림, 점검 일정 등을 제공합니다.'
+            },
+            'assessment': {
+                title: '스마트 안전진단',
+                desc: '사업장 특성에 맞는 맞춤형 위험성평가를 제공합니다. 업종, 규모, 공정에 따른 특화된 체크리스트와 단계별 개선 로드맵을 확인할 수 있습니다.'
+            },
+            'inspection': {
+                title: '현장점검 매니저',
+                desc: '모바일 기반 현장 점검 체크리스트와 QR코드 스캔을 통한 설비별 안전 정보 및 점검 이력 관리 기능을 제공합니다.'
+            },
+            'education': {
+                title: '안전교육 도우미',
+                desc: '업종별, 직무별 맞춤형 안전교육 자료와 교육 이력 관리 기능을 제공합니다. 짧은 영상과 인포그래픽 등 현장 친화적인 콘텐츠를 활용할 수 있습니다.'
+            },
+            'investment': {
+                title: '안전투자 최적화',
+                desc: '위험도 기반 안전 투자 우선순위 추천과 정부 지원 사업 정보를 맞춤 제공합니다. 투자 대비 효과 분석을 통해 효율적인 안전 예산 활용을 지원합니다.'
+            }
+        };
+        
+        // 탭 클릭 이벤트 처리
+        demoTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // 모든 탭 비활성화
+                demoTabs.forEach(t => {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                });
+                
+                // 클릭된 탭 활성화
+                this.classList.add('active');
+                this.setAttribute('aria-selected', 'true');
+                
+                // 탭 ID 가져오기
+                const tabId = this.getAttribute('data-tab');
+                
+                // 모든 이미지 숨기기
+                document.querySelectorAll('.demo-img').forEach(img => {
+                    img.style.display = 'none';
+                });
+                
+                // 해당 탭의 이미지 표시
+                document.getElementById(tabId + '-img').style.display = 'block';
+                
+                // 탭패널 속성 업데이트
+                demoScreen.setAttribute('aria-labelledby', 'tab-' + tabId);
+                demoScreen.setAttribute('data-tab', tabId);
+                
+                // 제목과 설명 업데이트
+                demoTitle.textContent = tabContent[tabId].title;
+                demoDesc.textContent = tabContent[tabId].desc;
+            });
+        });
+    });
+    </script>
+
+
+<!-- 자바스크립트 스라이드 기능 - 수정된 버전 -->
+<script>
+// 페이지가 완전히 로드되었을 때 실행
+window.addEventListener('load', function() {
+    // 슬라이드 요소들
+    const slides = document.querySelectorAll('.hero-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    // 요소들이 정상적으로 존재하는지 확인
+    if(slides.length > 0 && indicators.length > 0) {
+        let currentSlide = 0;
+        
+        // 첫 번째 슬라이드 활성화
+        slides[0].classList.add('active');
+        
+        // 슬라이드 변경 함수
+        function changeSlide(index) {
+            // 현재 활성화된 슬라이드 및 인디케이터 비활성화
+            slides[currentSlide].classList.remove('active');
+            indicators[currentSlide].classList.remove('active');
+            
+            // 새 슬라이드 및 인디케이터 활성화
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+            indicators[currentSlide].classList.add('active');
+        }
+        
+        // 다음 슬라이드로 자동 전환
+        function nextSlide() {
+            let nextIndex = (currentSlide + 1) % slides.length;
+            changeSlide(nextIndex);
+        }
+        
+        // 인디케이터 클릭 이벤트
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                changeSlide(index);
+                // 클릭 시 자동 슬라이드 타이머 재설정
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+        });
+        
+        // 5초마다 슬라이드 자동 전환
+        let slideInterval = setInterval(nextSlide, 5000);
+        
+        console.log('슬라이드 초기화 완료: ' + slides.length + '개의 슬라이드와 ' + indicators.length + '개의 인디케이터를 찾았습니다.');
+    } else {
+        console.error('슬라이드 요소 또는 인디케이터를 찾을 수 없습니다.');
+        console.log('발견된 슬라이드: ' + slides.length);
+        console.log('발견된 인디케이터: ' + indicators.length);
+    }
+});
+</script>
+
+</body>
+</html>
