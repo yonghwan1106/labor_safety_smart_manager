@@ -1,0 +1,74 @@
+/* 독창성 섹션 스타일 */
+.creativity-section {
+    background-color: #f5faff;
+    padding: 5rem 0;
+}
+
+.creativity-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.creativity-item {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid var(--primary);
+}
+
+.creativity-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.creativity-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(30, 136, 229, 0.2);
+}
+
+.creativity-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    color: var(--primary-dark);
+}
+
+.creativity-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.creativity-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.8rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.creativity-list li i {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    color: var(--primary);
+}
+
+@media (max-width: 992px) {
+    .creativity-content {
+        grid-template-columns: 1fr;
+    }
+}
