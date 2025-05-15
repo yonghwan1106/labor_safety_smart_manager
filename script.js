@@ -156,33 +156,33 @@ function initRoadmapTimeline() {
                 <circle cx="120" cy="120" r="20" fill="#1e88e5" />
                 <text x="120" y="125" text-anchor="middle" font-size="14" fill="white">1</text>
                 <text x="120" y="170" text-anchor="middle" font-size="16" fill="#333">기반 구축</text>
-                <text x="120" y="190" text-anchor="middle" font-size="12" fill="#666">1-6개월</text>
-                <rect x="70" y="60" width="100" height="40" rx="5" fill="#f5f7fa" stroke="#1e88e5" />
-                <text x="120" y="85" text-anchor="middle" font-size="12" fill="#333">데이터 통합 시스템</text>
+                <text x="120" y="190" text-anchor="middle" font-size="12" fill="#666">2개월</text>
+                <rect x="60" y="60" width="120" height="40" rx="5" fill="#f5f7fa" stroke="#1e88e5" />
+                <text x="120" y="85" text-anchor="middle" font-size="13" fill="#333">데이터 통합 시스템</text>
                 
                 <!-- 단계 2: 핵심 기능 개발 -->
                 <circle cx="290" cy="120" r="20" fill="#ffa000" />
                 <text x="290" y="125" text-anchor="middle" font-size="14" fill="white">2</text>
                 <text x="290" y="170" text-anchor="middle" font-size="16" fill="#333">핵심 기능 개발</text>
-                <text x="290" y="190" text-anchor="middle" font-size="12" fill="#666">7-12개월</text>
-                <rect x="240" y="60" width="100" height="40" rx="5" fill="#f5f7fa" stroke="#ffa000" />
-                <text x="290" y="85" text-anchor="middle" font-size="12" fill="#333">모바일 앱 베타</text>
+                <text x="290" y="190" text-anchor="middle" font-size="12" fill="#666">4개월</text>
+                <rect x="230" y="60" width="120" height="40" rx="5" fill="#f5f7fa" stroke="#ffa000" />
+                <text x="290" y="85" text-anchor="middle" font-size="13" fill="#333">모바일 앱 베타</text>
                 
                 <!-- 단계 3: 고도화 -->
                 <circle cx="460" cy="120" r="20" fill="#43a047" />
                 <text x="460" y="125" text-anchor="middle" font-size="14" fill="white">3</text>
                 <text x="460" y="170" text-anchor="middle" font-size="16" fill="#333">고도화</text>
-                <text x="460" y="190" text-anchor="middle" font-size="12" fill="#666">13-18개월</text>
-                <rect x="410" y="60" width="100" height="40" rx="5" fill="#f5f7fa" stroke="#43a047" />
-                <text x="460" y="85" text-anchor="middle" font-size="12" fill="#333">AI 예측 모델</text>
+                <text x="460" y="190" text-anchor="middle" font-size="12" fill="#666">6개월</text>
+                <rect x="400" y="60" width="120" height="40" rx="5" fill="#f5f7fa" stroke="#43a047" />
+                <text x="460" y="85" text-anchor="middle" font-size="13" fill="#333">AI 예측 모델</text>
                 
                 <!-- 단계 4: 확장 -->
                 <circle cx="630" cy="120" r="20" fill="#e53935" />
                 <text x="630" y="125" text-anchor="middle" font-size="14" fill="white">4</text>
                 <text x="630" y="170" text-anchor="middle" font-size="16" fill="#333">확장</text>
-                <text x="630" y="190" text-anchor="middle" font-size="12" fill="#666">19-24개월</text>
-                <rect x="580" y="60" width="100" height="40" rx="5" fill="#f5f7fa" stroke="#e53935" />
-                <text x="630" y="85" text-anchor="middle" font-size="12" fill="#333">IoT 센서 연동</text>
+                <text x="630" y="190" text-anchor="middle" font-size="12" fill="#666">12개월</text>
+                <rect x="570" y="60" width="120" height="40" rx="5" fill="#f5f7fa" stroke="#e53935" />
+                <text x="630" y="85" text-anchor="middle" font-size="13" fill="#333">IoT 센서 연동</text>
             </svg>
         `;
     }
