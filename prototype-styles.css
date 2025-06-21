@@ -126,6 +126,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: white;
 }
 
 .card:hover {
@@ -138,6 +139,24 @@ body {
     border-bottom: 1px solid var(--gray-200);
     font-weight: 600;
     color: var(--primary-dark);
+}
+
+.card-body {
+    background-color: white;
+    color: var(--dark);
+    padding: 1.5rem;
+}
+
+.card-body h1, .card-body h2, .card-body h3, .card-body h4, .card-body h5, .card-body h6 {
+    color: var(--primary-dark);
+}
+
+.card-body p, .card-body div, .card-body span, .card-body li {
+    color: var(--gray-800);
+}
+
+.card-body .text-muted {
+    color: var(--gray-600) !important;
 }
 
 /* 통계 카드 */
@@ -356,6 +375,80 @@ body {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+}
+
+/* 추가 텍스트 색상 규칙 */
+.data-source-item {
+    color: var(--dark) !important;
+}
+
+.data-source-item h6 {
+    color: var(--primary-dark) !important;
+}
+
+.data-source-item .text-muted {
+    color: var(--gray-600) !important;
+}
+
+.data-source-item .fw-bold {
+    color: var(--dark) !important;
+}
+
+.recommendation-item {
+    color: var(--dark) !important;
+}
+
+.recommendation-item h6 {
+    color: var(--primary-dark) !important;
+}
+
+.ai-model-info {
+    color: var(--dark) !important;
+}
+
+.ai-model-info h6 {
+    color: var(--primary-dark) !important;
+}
+
+.ai-model-info li {
+    color: var(--gray-700) !important;
+}
+
+.weather-info {
+    color: var(--dark) !important;
+}
+
+.quality-metric {
+    color: var(--dark) !important;
+}
+
+.quality-metric .fw-bold {
+    color: var(--primary-dark) !important;
+}
+
+.popular-datasets .dataset-item {
+    color: var(--dark) !important;
+}
+
+.popular-datasets .fw-bold {
+    color: var(--primary-dark) !important;
+}
+
+.user-activity {
+    color: var(--dark) !important;
+}
+
+.user-activity .fw-bold {
+    color: var(--primary-dark) !important;
+}
+
+/* 테이블 내용 색상 보장 */
+.table tbody td {
+    color: var(--dark) !important;
+}
+
+.table tbody td strong {
+    color: var(--primary-dark) !important;
 }
 
 /* 반응형 디자인 */

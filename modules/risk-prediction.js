@@ -11,6 +11,163 @@ window.RiskPredictionModule = {
         this.startPredictionEngine();
     },
 
+    // 독립적인 유틸리티 함수들
+    formatNumber(num) {
+        return num.toLocaleString('ko-KR');
+    },
+
+    formatPercent(num) {
+        return `${num}%`;
+    },
+
+    getRiskLevelColor(level) {
+        const colors = {
+            'low': '#4caf50',
+            'medium': '#ff9800', 
+            'high': '#f44336',
+            'critical': '#c2185b'
+        };
+        return colors[level] || '#6c757d';
+    },
+
+    getRiskLevelText(level) {
+        const texts = {
+            'low': '낮음',
+            'medium': '보통',
+            'high': '높음',
+            'critical': '매우높음'
+        };
+        return texts[level] || '알수없음';
+    },
+
+    // 위험도에 따른 CSS 클래스 반환
+    getRiskClass(riskLevel) {
+        if (riskLevel < 25) return 'text-success';
+        if (riskLevel < 50) return 'text-warning';
+        if (riskLevel < 75) return 'text-danger';
+        return 'text-danger fw-bold';
+    },
+
+    // 추세에 따른 아이콘 반환
+    getTrendIcon(trend) {
+        const icons = {
+            'increasing': 'arrow-up',
+            'decreasing': 'arrow-down',
+            'stable': 'minus',
+            'critical': 'exclamation-triangle',
+            'improving': 'arrow-down'
+        };
+        return icons[trend] || 'circle';
+    },
+
+    // 추세에 따른 색상 반환
+    getTrendColor(trend) {
+        const colors = {
+            'increasing': 'danger',
+            'decreasing': 'success',
+            'stable': 'secondary',
+            'critical': 'danger',
+            'improving': 'success'
+        };
+        return colors[trend] || 'secondary';
+    },
+
+    // 추세 텍스트 반환
+    getTrendText(trend) {
+        const texts = {
+            'increasing': '증가',
+            'decreasing': '감소',
+            'stable': '안정',
+            'critical': '위험',
+            'improving': '개선'
+        };
+        return texts[trend] || '알수없음';
+    },
+
+    // 영향도에 따른 색상 반환
+    getImpactColor(impact) {
+        if (impact < 30) return 'success';
+        if (impact < 60) return 'warning';
+        if (impact < 80) return 'danger';
+        return 'dark';
+    },
+
+    // 긴급도에 따른 색상 반환
+    getUrgencyColor(urgency) {
+        const colors = {
+            'low': 'success',
+            'medium': 'warning',
+            'high': 'danger',
+            'critical': 'dark'
+        };
+        return colors[urgency] || 'secondary';
+    },
+
+    // 긴급도 텍스트 반환
+    getUrgencyText(urgency) {
+        const texts = {
+            'low': '낮음',
+            'medium': '보통',
+            'high': '높음',
+            'critical': '매우높음'
+        };
+        return texts[urgency] || '알수없음';
+    },
+
+    // 독립적인 알림 함수
+    showNotification(message, type = 'info', duration = 3000) {
+        const notification = document.createElement('div');
+        notification.className = `alert alert-${type} position-fixed`;
+        notification.style.cssText = `
+            top: 80px;
+            right: 20px;
+            z-index: 9999;
+            min-width: 300px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        `;
+        notification.innerHTML = `
+            <i class="fas fa-${this.getIconForType(type)} me-2"></i>
+            ${message}
+            <button type="button" class="btn-close float-end" aria-label="Close"></button>
+        `;
+
+        document.body.appendChild(notification);
+
+        // 닫기 버튼 이벤트
+        notification.querySelector('.btn-close').addEventListener('click', () => {
+            this.removeNotification(notification);
+        });
+
+        // 자동 삭제
+        setTimeout(() => {
+            this.removeNotification(notification);
+        }, duration);
+    },
+
+    // 알림 제거
+    removeNotification(notification) {
+        notification.style.transition = 'all 0.3s ease';
+        notification.style.transform = 'translateX(100%)';
+        notification.style.opacity = '0';
+        
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    },
+
+    // 알림 타입별 아이콘
+    getIconForType(type) {
+        const icons = {
+            'success': 'check-circle',
+            'warning': 'exclamation-triangle',
+            'danger': 'exclamation-circle',
+            'info': 'info-circle'
+        };
+        return icons[type] || 'info-circle';
+    },
+
     generatePredictionData() {
         this.predictionData = {
             currentAnalysis: {
@@ -130,7 +287,7 @@ window.RiskPredictionModule = {
                                         AI 위험 예측 엔진 가동 중
                                     </h4>
                                     <p class="mb-0">
-                                        실시간으로 ${window.PrototypeUtils.formatNumber(data.currentAnalysis.dataPoints)}개의 데이터 포인트를 분석하여 
+                                        실시간으로 ${this.formatNumber(data.currentAnalysis.dataPoints)}개의 데이터 포인트를 분석하여 
                                         ${data.currentAnalysis.analyzedFactors}개 위험 요소를 평가합니다.
                                     </p>
                                 </div>
@@ -628,13 +785,13 @@ window.RiskPredictionModule = {
     },
 
     generateDetailedReport() {
-        window.SafetyPlatform.showNotification(
+        this.showNotification(
             'AI 예측 분석 보고서 생성을 시작합니다...', 
             'info'
         );
         
         setTimeout(() => {
-            window.SafetyPlatform.showNotification(
+            this.showNotification(
                 '상세 분석 보고서가 성공적으로 생성되었습니다.', 
                 'success'
             );
