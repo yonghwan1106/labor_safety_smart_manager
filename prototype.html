@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세이프티 스마트 매니저 - 플랫폼 프로토타입</title>
+    
+    <!-- CSS 라이브러리 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="prototype-styles.css">
+    
+    <!-- Chart.js 라이브러리 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+</head>
+
+<body>
+    <!-- 상단 네비게이션 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-shield-alt me-2"></i>
+                세이프티 스마트 매니저
+            </a>
+            
+            <!-- 사용자 정보 -->
+            <div class="d-flex align-items-center text-white">
+                <div class="me-3">
+                    <small>대한제조㈜</small><br>
+                    <strong>김철수 안전관리자</strong>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-outline-light btn-sm dropdown-toggle" data-bs-toggle="dropdown">
+                        <i class="fas fa-user-circle"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>설정</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i>로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 사이드바 네비게이션 -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-menu">
+            <a href="index.html" class="menu-item" style="background-color: rgba(255,255,255,0.1); margin-bottom: 10px;">
+                <i class="fas fa-home"></i>
+                <span>홈으로</span>
+            </a>
+            
+            <a href="#dashboard" class="menu-item active" data-module="dashboard">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>대시보드</span>
+            </a>
+            <a href="#risk-prediction" class="menu-item" data-module="risk-prediction">
+                <i class="fas fa-brain"></i>
+                <span>위험 예측</span>
+            </a>
+            <a href="#mobile-inspection" class="menu-item" data-module="mobile-inspection">
+                <i class="fas fa-mobile-alt"></i>
+                <span>현장 점검</span>
+            </a>
+            <a href="#education" class="menu-item" data-module="education">
+                <i class="fas fa-graduation-cap"></i>
+                <span>안전 교육</span>
+            </a>
+            <a href="#data-hub" class="menu-item" data-module="data-hub">
+                <i class="fas fa-database"></i>
+                <span>데이터 허브</span>
+            </a>
+            
+            <!-- 디버깅 버튼들 -->
+            <hr style="margin: 20px 0; border-color: rgba(255,255,255,0.1);">
+            <div class="px-3">
+                <h6 class="text-white-50 mb-2">디버깅</h6>
+                <button class="btn btn-sm btn-outline-light mb-1 w-100" onclick="testDashboardInit()">
+                    대시보드 초기화
+                </button>
+                <button class="btn btn-sm btn-outline-warning mb-1 w-100" onclick="showModuleStatus()">
+                    모듈 상태 확인
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 메인 콘텐츠 영역 -->
+    <div class="main-content">
+        <!-- 대시보드 모듈 -->
+        <div id="dashboard-module" class="module-content active">
+            <div class="module-header">
+                <h2><i class="fas fa-tachometer-alt me-2"></i>안전 대시보드</h2>
+                <p class="text-muted">오늘의 안전 현황을 한눈에 확인하세요</p>
+            </div>
+            
+            <!-- 대시보드 내용은 별도 모듈에서 구현 -->
+            <div id="dashboard-content">
+                <!-- 여기에 대시보드 콘텐츠가 로드됩니다 -->
+            </div>
+        </div>
+
+        <!-- 위험 예측 모듈 -->
+        <div id="risk-prediction-module" class="module-content">
+            <div class="module-header">
+                <h2><i class="fas fa-brain me-2"></i>스마트 위험 예측</h2>
+                <p class="text-muted">AI 기반 위험 요소 사전 감지 시스템</p>
+            </div>
+            
+            <div id="risk-prediction-content">
+                <!-- 여기에 위험 예측 콘텐츠가 로드됩니다 -->
+            </div>
+        </div>
+
+        <!-- 모바일 점검 모듈 -->
+        <div id="mobile-inspection-module" class="module-content">
+            <div class="module-header">
+                <h2><i class="fas fa-mobile-alt me-2"></i>현장 점검</h2>
+                <p class="text-muted">QR코드 기반 현장 안전 점검 시스템</p>
+            </div>
+            
+            <div id="mobile-inspection-content">
+                <!-- 여기에 모바일 점검 콘텐츠가 로드됩니다 -->
+            </div>
+        </div>
+
+        <!-- 안전 교육 모듈 -->
+        <div id="education-module" class="module-content">
+            <div class="module-header">
+                <h2><i class="fas fa-graduation-cap me-2"></i>안전 교육</h2>
+                <p class="text-muted">맞춤형 안전 교육 및 이력 관리</p>
+            </div>
+            
+            <div id="education-content">
+                <!-- 여기에 교육 콘텐츠가 로드됩니다 -->
+            </div>
+        </div>
+
+        <!-- 데이터 허브 모듈 -->
+        <div id="data-hub-module" class="module-content">
+            <div class="module-header">
+                <h2><i class="fas fa-database me-2"></i>데이터 허브</h2>
+                <p class="text-muted">통합 안전 데이터 분석 및 관리</p>
+            </div>
+            
+            <div id="data-hub-content">
+                <!-- 여기에 데이터 허브 콘텐츠가 로드됩니다 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 부트스트랩 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- 프로토타입 메인 스크립트 -->
+    <script src="prototype-main.js"></script>
+    
+    <!-- 모듈별 스크립트 -->
+    <script src="modules/dashboard.js"></script>
+    <script src="modules/risk-prediction.js"></script>
+    <script src="modules/mobile-inspection.js"></script>
+    <script src="modules/education.js"></script>
+    <script src="modules/data-hub.js"></script>
+    
+    <!-- 디버깅 스크립트 -->
+    <script>
+        // 디버깅 함수들을 전역으로 노출
+        window.testDashboardInit = function() {
+            console.log('=== 대시보드 수동 초기화 테스트 ===');
+            try {
+                if (window.DashboardModule) {
+                    console.log('DashboardModule 발견됨');
+                    window.DashboardModule.init();
+                    console.log('대시보드 초기화 완료');
+                    alert('대시보드 초기화 성공!');
+                } else {
+                    console.error('DashboardModule을 찾을 수 없음');
+                    alert('DashboardModule을 찾을 수 없습니다.');
+                }
+            } catch (error) {
+                console.error('대시보드 초기화 오류:', error);
+                alert('오류: ' + error.message);
+            }
+        };
+        
+        window.showModuleStatus = function() {
+            const modules = [
+                'SafetyPlatform',
+                'DashboardModule', 
+                'RiskPredictionModule',
+                'MobileInspectionModule',
+                'EducationModule',
+                'DataHubModule'
+            ];
+            
+            let status = '=== 모듈 상태 ===\n';
+            modules.forEach(module => {
+                const exists = window[module] ? '✓' : '✗';
+                status += `${module}: ${exists}\n`;
+            });
+            
+            console.log(status);
+            alert(status);
+        };
+        
+        // 모듈 로딩 상태 확인
+        window.addEventListener('load', () => {
+            console.log('=== 모듈 로딩 상태 ===');
+            console.log('SafetyPlatform:', window.SafetyPlatform);
+            console.log('DashboardModule:', window.DashboardModule);
+            console.log('RiskPredictionModule:', window.RiskPredictionModule);
+            console.log('MobileInspectionModule:', window.MobileInspectionModule);
+            console.log('EducationModule:', window.EducationModule);
+            console.log('DataHubModule:', window.DataHubModule);
+            
+            // 3초 후 모듈 상태 재확인
+            setTimeout(() => {
+                console.log('=== 3초 후 상태 ===');
+                const dashboardContent = document.getElementById('dashboard-content');
+                console.log('Dashboard content element:', dashboardContent);
+                console.log('Dashboard content HTML length:', dashboardContent ? dashboardContent.innerHTML.length : 'NOT FOUND');
+                
+                // 만약 대시보드 내용이 비어있다면 수동으로 초기화 시도
+                if (dashboardContent && dashboardContent.innerHTML.trim() === '' && window.DashboardModule) {
+                    console.log('대시보드 내용이 비어있음. 수동 초기화 시도...');
+                    try {
+                        window.DashboardModule.init();
+                        console.log('수동 초기화 완료');
+                    } catch (error) {
+                        console.error('수동 초기화 실패:', error);
+                    }
+                }
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
